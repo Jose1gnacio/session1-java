@@ -11,7 +11,7 @@ public class Sobrecargas {
     static int suma(int numero1, int numero2 ){
         return numero1 + numero2;
     }
-    static int suma(int nummero1, int numero2, int numero3 ){
+    static int suma(int numero1, int numero2, int numero3 ){
         return numero1 + numero2;
     }
     static double suma(double numero1, double numero2 ){
