@@ -1,8 +1,10 @@
-package com.example;
+package com.example.tiposdatos;
 
 public class Operadores {
 
     public static void main(String[] args) {
+        // === en java no existe!
+
         // aritmeticos
         int numero1 = 11;
         int numero2 = 14;
