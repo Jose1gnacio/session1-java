@@ -20,5 +20,24 @@ public class EjemplosString {
         } else {
             System.out.println("No esta lo que busco");
         }
+
+        boolean resultado2 = cadena.endsWith("TO");
+        if (resultado2) {
+            System.out.println("Termina por lo que estoy buscando");
+        } else {
+            System.out.println("No esta lo que busco");
+        }
+
+        char letra = cadena.charAt(4);
+        System.out.println(letra);
+
+
+        for (int i = 0; i < cadena.length(); i++) {
+            System.out.println("la letra es " + cadena.charAt(i));
+        }
+
+        for (int i = cadena.length()-1; i >= 0 ; i--) {
+            System.out.println("La letra es " + cadena.charAt(i));
+        }
     }
 }
