@@ -7,7 +7,7 @@ Clase derivada o CLase Hija o SubClase
 public class Motocicleta extends Vehiculo {
 
     boolean baul;
-    boolean baul2;
+
 
 
     public Motocicleta() {};    public Motocicleta(String fabricante, String modelo, double cc, int year, boolean sport, int speed, Motor motor, boolean baul) {
