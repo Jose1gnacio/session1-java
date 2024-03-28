@@ -2,7 +2,7 @@ package com.example.ejemplos;
 
 import java.util.Vector;
 
-public class Vectores {
+public class EjemplosVectores {
     public static void main(String[] args) {
         /*
         - si sobrepaso la capacidad del vector, este siempre aumentara en el doble (si no
