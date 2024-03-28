@@ -8,12 +8,12 @@ public class EjemploBigDecimal {
     public static void main(String[] args) {
         BigDecimal valorA = new BigDecimal(11.1f);
         BigDecimal valorB = new BigDecimal(4);
-        valorA.multiply(valorB);//multiplicar
-        valorA.add(valorB);//sumar
+        BigDecimal resultado = valorA.multiply(valorB);//multiplicar
+        BigDecimal resultado2 = valorA.add(valorB);//sumar
         //si no guardo los valores en una variable, se almacenaran en la primera variable
         //en este caso en valorA
-        System.out.println(valorA);//aqui internamente hace el proceso de mostrarlo en string
-        System.out.println(valorA.toString());//aqui pido implicitamente que se muestre en string
+        System.out.println(resultado);//aqui internamente hace el proceso de mostrarlo en string
+        System.out.println(resultado2.toString());//aqui pido implicitamente que se muestre en string
 
     }
 }
