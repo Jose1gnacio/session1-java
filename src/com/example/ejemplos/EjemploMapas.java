@@ -28,7 +28,7 @@ public class EjemploMapas {
 
         //Recorrer un mapa
 
-        for (Map.Entry elemento : mapa.entrySet()) {
+        for (Map.Entry<String, Integer> elemento : mapa.entrySet()) {
             System.out.println("Elemento clave es: " + elemento.getKey());
             System.out.println("Elemento valor es: " + elemento.getValue());
 
