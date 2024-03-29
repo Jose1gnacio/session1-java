@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<credenciales>
+    <usuario>JoseALvarez</usuario>
+    <claves>EstaesMiclave</claves>
+    <video proveedor="vimeo">
+        <video>Primera sesion</video>
+        <video>Segunda sesion</video>
+    </video>
+    <etiqueta proveedor="youtbe"/>
+</credenciales>

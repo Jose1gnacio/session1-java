@@ -1,0 +1,14 @@
+
+
+{
+  "credenciales": {
+    "usuario": "JoseAlvarez",
+    "clave": "askfaf",
+    "videos": [
+      "Primera sesión",
+      "Segunda sessión"
+    ],
+    "numeros": 11,
+    "boolean": true
+  }
+}
