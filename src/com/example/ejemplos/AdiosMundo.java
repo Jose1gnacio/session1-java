@@ -1,4 +1,4 @@
-package com.example;
+package com.example.ejemplos;
 
 public class AdiosMundo {
     /**

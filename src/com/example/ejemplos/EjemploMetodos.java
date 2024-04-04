@@ -34,6 +34,9 @@ public class EjemploMetodos {
         }
 
     }
+    /*
+    Ejemplo sobrecarga
+     */
     public static String play(String[] titleArray) {
         Random numRandom = new Random();
         int index = numRandom.nextInt(titleArray.length-1);
@@ -43,7 +46,6 @@ public class EjemploMetodos {
             }
             return title;
     }
-
     public static void pause(String title) {
         if (title.isEmpty()) {
             System.out.println("No movie playing");
