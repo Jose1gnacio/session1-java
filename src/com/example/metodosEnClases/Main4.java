@@ -13,5 +13,11 @@ public class Main4 {
 
         int interestelarTotalFrames = interestelar.getTotalFrames();
         System.out.println("Total frames: " + interestelarTotalFrames);
+
+        /*
+        ejemplo toString
+         */
+        System.out.println();
+        System.out.println(interestelar);
     }
 }

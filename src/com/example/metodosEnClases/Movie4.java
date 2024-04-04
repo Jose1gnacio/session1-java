@@ -1,14 +1,20 @@
 package com.example.metodosEnClases;
 
 public class Movie4 {
+
+    static final int FRAME_RESOLUTION = 60;//constante que nunca se pueden cambiar de valor
+    static final int SECONDS_IN_A_MINUTE = 60;
     String title;
     String genre;
     int duration;
 
+    public int getTotalFrames() {
+        return this.duration * FRAME_RESOLUTION * SECONDS_IN_A_MINUTE;
+    }
+
     public Movie4(String title, String genre) {
         this.title = title;
         this.genre = genre;
-        this.duration = duration;
     }
     public Movie4(String title, String genre, int duration) {
         this.title = title;
@@ -52,8 +58,14 @@ public class Movie4 {
         System.out.println("Playing movie: " + title);
     };
 
-    public int getTotalFrames() {
-        return this.duration * 60 * 60;
+
+
+    /*
+    Metodo toString
+     */
+    @Override
+    public String toString() {
+        return "The movie is: " + title + " and the genre is: " + genre + " and the duration is: " + duration;
     }
 }
 
