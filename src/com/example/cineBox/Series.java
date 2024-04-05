@@ -12,8 +12,7 @@ public class Series extends Media {
         super(title, genre, duration);//super hace referencia que esta llamando al contructor de media
         this.totalEpisodes = totalEpisodes;
         this.totalSeasons = totalSeasons;
-
-
+        episodeDuration = duration;
     }
 
     public Series() {
@@ -21,6 +20,11 @@ public class Series extends Media {
         totalEpisodes = 0;
         totalSeasons = 0;
         episodeDuration = 0;
+    }
+
+    @Override
+    public int getDuration() {
+        return episodeDuration * totalEpisodes;
     }
 
     public int getTotalEpisodes() {

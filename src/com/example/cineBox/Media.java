@@ -5,11 +5,22 @@ public class Media {
     private String title;
     private String genre;
     private int duration;
+    private String synopsis;
+
+
 
     public Media(String title, String genre, int duration) {
         this.title = title;
         this.genre = genre;
         this.duration = duration;
+    }
+
+    public String getSynopsis() {
+        return synopsis;
+    }
+
+    public void setSynopsis(String synopsis) {
+        this.synopsis = synopsis;
     }
 
     public String getTitle() {
@@ -42,6 +53,18 @@ public class Media {
 
     public void pause() {
         printSomething("Pausing " + title);
+    }
+
+    public void download() {
+        System.out.println("Dowloading " + title);
+        try {
+            Thread.sleep(5000);
+        } catch (InterruptedException e) {
+            //throw new RuntimeException(e);
+            e.printStackTrace();
+        }
+        System.out.println(title + " Donwloaded!");
+
     }
 
     private void printSomething(String something) {

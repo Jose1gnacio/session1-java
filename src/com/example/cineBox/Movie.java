@@ -9,6 +9,11 @@ public class Movie extends Media {
 
     }
 
+    @Override
+    public int getDuration() {
+        return super.getDuration();
+    }
+
     public boolean isWonOscar() {
         return wonOscar;
     }
