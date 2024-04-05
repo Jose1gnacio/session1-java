@@ -56,14 +56,20 @@ public class Media {
     }
 
     public void download() {
-        System.out.println("Dowloading " + title);
-        try {
-            Thread.sleep(5000);
-        } catch (InterruptedException e) {
-            //throw new RuntimeException(e);
-            e.printStackTrace();
-        }
-        System.out.println(title + " Donwloaded!");
+        Thread thread = new Thread(new Runnable() {
+            @Override
+            public void run() {
+                System.out.println("Dowloading " + title);
+                try {
+                    Thread.sleep(15000);
+                } catch (InterruptedException e) {
+                    //throw new RuntimeException(e);
+                    e.printStackTrace();
+                }
+                System.out.println(title + " Donwloaded!");
+            }
+        });
+        thread.start();
 
     }
 
