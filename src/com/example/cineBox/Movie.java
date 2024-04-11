@@ -5,13 +5,16 @@ public class Movie extends Media {
 
     public Movie(String title, String genre, int duration) {
         super(title, genre, duration);//super hace referencia que esta llamando al contructor de media
-
-
     }
 
     @Override
     public int getDuration() {
         return super.getDuration();
+    }
+
+    @Override
+    public void play() {
+        printSomething("Playing " + super.getTitle());
     }
 
     public boolean isWonOscar() {

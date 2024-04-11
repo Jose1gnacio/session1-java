@@ -2,23 +2,23 @@ package com.example.cineBox;
 
 public class MediaDownloader {
     public interface DownLoadListener {
-        void onMediaDownloaded(String content);
+        void onMediaDownloaded(Media media, String content);
     }
 
-    public static void download(String mediaTitle, DownLoadListener downLoadListener) {
+    public static void download(Media media, DownLoadListener downLoadListener) {
         Thread thread = new Thread(new Runnable() {
             @Override
             public void run() {
-                System.out.println("Dowloading " + mediaTitle);
+                System.out.println("Dowloading " + media.getTitle());
                 try {
                     Thread.sleep(15000);
                 } catch (InterruptedException e) {
                     //throw new RuntimeException(e);
                     e.printStackTrace();
                 }
-                System.out.println(mediaTitle + " Donwloaded!");
+                System.out.println(media.getTitle() + " Donwloaded!");
                 String content = "Contenido de descargado de la pelicula";
-                downLoadListener.onMediaDownloaded(content);
+                downLoadListener.onMediaDownloaded(media, content);
             }
         });
         thread.start();

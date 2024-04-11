@@ -1,5 +1,4 @@
 package com.example.cineBox;
-
 import java.util.Scanner;
 
 public class Series extends Media {
@@ -25,6 +24,14 @@ public class Series extends Media {
     @Override
     public int getDuration() {
         return episodeDuration * totalEpisodes;
+    }
+
+    @Override
+    public void play() {
+        System.out.println("Which episode do you want to play?");
+        Scanner scanner = new Scanner(System.in);
+        int episodeIndex = scanner.nextInt();
+        printSomething("Playing epidose " + episodeIndex + super.getTitle());
     }
 
     public int getTotalEpisodes() {

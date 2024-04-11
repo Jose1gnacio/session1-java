@@ -1,6 +1,6 @@
 package com.example.cineBox;
 
-public class Media {
+public abstract class Media {
     private String title;
     private String genre;
     private int duration;
@@ -11,10 +11,6 @@ public class Media {
         this.title = title;
         this.genre = genre;
         this.duration = duration;
-    }
-
-    public void setContent(String content) {
-        this.content = content;
     }
 
     public String getSynopsis() {
@@ -41,13 +37,16 @@ public class Media {
     public void setDuration(int duration) {
         this.duration = duration;
     }
-    public void play() {
-        printSomething("Playing " + title);
-    }
+
+    public abstract void play();
     public void pause() {
+
         printSomething("Pausing " + title);
     }
-    private void printSomething(String something) {
+    public void setContent(String content) {
+        this.content = content;
+    }
+    public void printSomething(String something) {
         System.out.println(something);
     }
 
