@@ -28,6 +28,7 @@ public class Series extends Media {
 
     @Override
     public void play() {
+        //System.out.println("Playing " + super.getTitle()); // para el Queue
         System.out.println("Which episode do you want to play?");
         Scanner scanner = new Scanner(System.in);
         int episodeIndex = scanner.nextInt();

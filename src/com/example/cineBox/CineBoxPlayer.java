@@ -1,6 +1,7 @@
 package com.example.cineBox;
 
 import java.util.Collections;
+import java.util.PriorityQueue;
 import java.util.Scanner;
 import java.util.ArrayList;
 
@@ -27,6 +28,16 @@ public class CineBoxPlayer implements MediaDownloader.DownLoadListener {
         breakingBad.setSynopsis("Breaking Bad is a 2016 American drama film based on");
         vikings.setSynopsis("Vikings is a 2017 American dram");
         friends.setSynopsis("Friends is a 2018 American comedy film based on");
+
+        PriorityQueue<Media> mediaQueue = new PriorityQueue<>();
+        mediaQueue.add(backToTheFuture);
+        mediaQueue.add(avengers);
+        mediaQueue.add(Avatar);
+        mediaQueue.add(breakingBad);
+        mediaQueue.add(vikings);
+        mediaQueue.add(friends);
+
+        //playQueue(mediaQueue);
 
         ArrayList<Media> mediaList = new ArrayList<>();
         mediaList.add(backToTheFuture);
@@ -59,6 +70,19 @@ public class CineBoxPlayer implements MediaDownloader.DownLoadListener {
         }
         System.out.println("Fin");
     }
+    private void playQueue (PriorityQueue<Media> mediaQueue) {
+        while (mediaQueue.size() > 0) {
+            Media media = mediaQueue.poll();
+            media.play();
+            try {
+                Thread.sleep(2000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+
     private static void printInstructions(ArrayList<Media> mediaList) {
         System.out.println("Seleciona una serie para ver su sinopsis");
         for (int i = 0; i< mediaList.size(); i++ ) {
