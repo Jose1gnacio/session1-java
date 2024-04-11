@@ -1,12 +1,13 @@
 package com.example.cineBox;
 
-import java.util.Collections;
+//import java.util.Collections;
 import java.util.PriorityQueue;
 import java.util.Scanner;
 import java.util.ArrayList;
 
 public class CineBoxPlayer implements MediaDownloader.DownLoadListener {
 
+    Series breakingBad;
     public void initialize() {
         Movie backToTheFuture = new Movie("Back to the Future", "Ciencia Ficción", 120);
         Movie avengers = new Movie("Avengers", "Action", 120);
@@ -17,18 +18,19 @@ public class CineBoxPlayer implements MediaDownloader.DownLoadListener {
         Avatar.setSynopsis("Avatar is a 2014 film based on");
 
         MediaDownloader.download(backToTheFuture, this);
-
+        /*
         Series breakingBad = new Series("Breaking Bad", "Drama and Drugs", 50, 11,
-                5 );
+                5 );*/
         Series vikings = new Series("Vikings", "Actions and adventure", 60, 12,
                 6 );
         Series friends = new Series("Friends", "Comedy", 700, 14,
                 10 );
 
-        breakingBad.setSynopsis("Breaking Bad is a 2016 American drama film based on");
+        //breakingBad.setSynopsis("Breaking Bad is a 2016 American drama film based on");
         vikings.setSynopsis("Vikings is a 2017 American dram");
         friends.setSynopsis("Friends is a 2018 American comedy film based on");
 
+        /*
         PriorityQueue<Media> mediaQueue = new PriorityQueue<>();
         mediaQueue.add(backToTheFuture);
         mediaQueue.add(avengers);
@@ -36,6 +38,8 @@ public class CineBoxPlayer implements MediaDownloader.DownLoadListener {
         mediaQueue.add(breakingBad);
         mediaQueue.add(vikings);
         mediaQueue.add(friends);
+
+         */
 
         //playQueue(mediaQueue);
 
@@ -47,7 +51,7 @@ public class CineBoxPlayer implements MediaDownloader.DownLoadListener {
         mediaList.add(vikings);
         mediaList.add(friends);
 
-        Collections.sort(mediaList);//para ordenar alfabeticamente
+        //Collections.sort(mediaList);//para ordenar alfabeticamente
 
         printInstructions(mediaList);
 
@@ -88,7 +92,12 @@ public class CineBoxPlayer implements MediaDownloader.DownLoadListener {
         for (int i = 0; i< mediaList.size(); i++ ) {
             Media media = mediaList.get(i);
             int index = i + 1;
-            System.out.println(index + ") - " + media.getTitle());
+            try {
+                System.out.println(index + ") - " + media.getTitle());
+            } catch (NullPointerException e) {
+                System.out.println("Hubo un error con la película con el índice: " + index);
+            }
+
         }
         //otra forma de recorrer la arrayList, de esta forma se muestra pero no se muestra el indice
         //el cual necesitamos para poder indicar a que numero corresponde
