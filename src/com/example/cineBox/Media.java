@@ -1,6 +1,6 @@
 package com.example.cineBox;
 
-public abstract class Media {
+public abstract class Media implements Comparable<Media> {
     private String title;
     private String genre;
     private int duration;
@@ -57,5 +57,17 @@ public abstract class Media {
     @Override
     public String toString() {
         return "Media title is: " + title;
+    }
+
+    @Override
+    public int compareTo(Media otherMedia) {
+        if(this.getDuration() > otherMedia.getDuration()){
+            return 1;
+        } else if (this.getDuration() < otherMedia.getDuration()) {
+            return -1;
+        } else {
+            return this.getTitle().compareTo(otherMedia.getTitle());
+        }
+        //return this.getTitle().compareTo(otherMedia.getTitle());
     }
 }

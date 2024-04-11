@@ -1,5 +1,6 @@
 package com.example.cineBox;
 
+import java.util.Collections;
 import java.util.Scanner;
 import java.util.ArrayList;
 
@@ -7,16 +8,14 @@ public class CineBoxPlayer implements MediaDownloader.DownLoadListener {
 
     public void initialize() {
         Movie backToTheFuture = new Movie("Back to the Future", "Ciencia Ficción", 120);
-        backToTheFuture.setWonOscar(true);
-
-        MediaDownloader.download(backToTheFuture, this);
-
-        Movie avengers = new Movie("Avengers", "Action", 130);
-        Movie Avatar = new Movie("Back to the Future", "Ficción", 140);
+        Movie avengers = new Movie("Avengers", "Action", 120);
+        Movie Avatar = new Movie("Avatar", "Ficción", 140);
 
         backToTheFuture.setSynopsis("Back to the Future is a 2016 American drama film based on");
         avengers.setSynopsis("Avengers is a 2012 American action film based on");
         Avatar.setSynopsis("Avatar is a 2014 film based on");
+
+        MediaDownloader.download(backToTheFuture, this);
 
         Series breakingBad = new Series("Breaking Bad", "Drama and Drugs", 50, 11,
                 5 );
@@ -37,48 +36,41 @@ public class CineBoxPlayer implements MediaDownloader.DownLoadListener {
         mediaList.add(vikings);
         mediaList.add(friends);
 
+        Collections.sort(mediaList);//para ordenar alfabeticamente
+
         printInstructions(mediaList);
 
         Scanner scanner2 = new Scanner(System.in);
         int selection = scanner2.nextInt();
 
-
         while (selection != 0) {
             System.out.println("\n");
-
-            if (selection == 1) {
-                System.out.println(breakingBad.getSynopsis());
-            } else if (selection == 2) {
-                System.out.println(vikings.getSynopsis());
-            } else if (selection == 3) {
-                System.out.println(friends.getSynopsis());
+            int mediaListSIze = mediaList.size();
+            int index = selection -1;
+            if (index >= mediaListSIze){
+                System.out.println("Serie invalida, seleciona otra");
             } else {
-                System.out.println("Serie invalida");
+                Media media = mediaList.get(index);
+                System.out.println(media.getSynopsis());
             }
-
             System.out.println("\n");
             printInstructions(mediaList);
             selection = scanner2.nextInt();
         }
         System.out.println("Fin");
-
     }
     private static void printInstructions(ArrayList<Media> mediaList) {
         System.out.println("Seleciona una serie para ver su sinopsis");
-
-        Media backToTheFuture = mediaList.get(0);
-        Media avengers = mediaList.get(1);
-        Media Avatar = mediaList.get(2);
-        Media breakingBad = mediaList.get(3);
-        Media vikings = mediaList.get(4);
-        Media friends = mediaList.get(5);
-
-        System.out.println("1) - " + backToTheFuture.getTitle());
-        System.out.println("2) - " + avengers.getTitle());
-        System.out.println("3) - " + Avatar.getTitle());
-        System.out.println("4) - " + breakingBad.getTitle());
-        System.out.println("5) - " + vikings.getTitle());
-        System.out.println("6) - " + friends.getTitle());
+        for (int i = 0; i< mediaList.size(); i++ ) {
+            Media media = mediaList.get(i);
+            int index = i + 1;
+            System.out.println(index + ") - " + media.getTitle());
+        }
+        //otra forma de recorrer la arrayList, de esta forma se muestra pero no se muestra el indice
+        //el cual necesitamos para poder indicar a que numero corresponde
+        //for (Media media : mediaList){
+        //    System.out.println(media.getTitle());
+        //}
         System.out.println("0) - Salir");
     }
 
